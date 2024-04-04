@@ -1,0 +1,75 @@
+@import "../../../../assets/styles/style.scss";
+footer {
+  padding: clamp(1.875rem, 1.364rem + 2.273vw, 3.75rem) 0px;
+}
+.footer__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__menu {
+  display: flex;
+  @include responsive-property("gap", 20, 222, 3);
+}
+.footer__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include responsive-property("gap", 20, 100, 3);
+}
+.footer__item {
+  font-size: clamp(1.0625rem, 1.011rem + 0.227vw, 1.25rem);
+  color: rgb(255, 255, 255);
+  line-height: 120%;
+}
+
+.icon__list {
+  display: flex;
+  justify-content: center;
+  @include responsive-property("gap", 5, 10, 1);
+}
+.icon__item {
+  a {
+    display: block;
+    @include responsive-property("padding", 6, 12, 1);
+    img {
+      display: block;
+      width: 23px;
+      height: 100%;
+    }
+  }
+}
+.footer__bot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bot__copyright {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 120%;
+  text-align: left;
+}
+.left {
+  display: inline-block;
+}
+.right {
+  display: inline-block;
+}
+.transfer {
+  display: none;
+}
+@media screen and (max-width: 767.98px) {
+  .footer__list {
+    display: none;
+  }
+  .transfer {
+    display: block;
+  }
+}
