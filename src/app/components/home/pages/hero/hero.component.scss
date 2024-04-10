@@ -1,0 +1,142 @@
+@import "../../../../../assets/styles/style.scss";
+.hero {
+  @include responsive-property("margin-top", 90, 150, 1);
+
+  button,
+  a {
+    cursor: pointer;
+  }
+}
+.hero__container {
+  position: relative;
+  overflow: visible;
+}
+
+.hero__block {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(3.75rem, -2.566rem + 13.158vw, 11.25rem)
+    clamp(0.9375rem, 0.129rem + 3.448vw, 3.75rem)
+    clamp(2.5rem, 2.141rem + 1.533vw, 3.75rem)
+    clamp(1.25rem, 0.532rem + 3.065vw, 3.75rem);
+  position: inherit;
+  @include responsive-property("gap", 100, 190, 3);
+  height: 100%;
+}
+.hero__fone {
+  @include responsive-property("border-radius", 5, 10, 3);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+.hero__title {
+  /* Web/H1 */
+  color: rgb(255, 255, 255);
+  font-family: Comfortaa;
+  font-size: clamp(2.25rem, 0.895rem + 5.1vw, 6.25rem);
+  font-weight: 600;
+  line-height: 110%;
+}
+.hero__block-content {
+  display: flex;
+  flex-direction: column;
+  @include responsive-property("gap", 20, 40, 1);
+}
+// block with text and btn
+.hero__block-info {
+  display: flex;
+  flex-direction: column;
+  @include responsive-property("gap", 40, 50, 1);
+
+  .hero__block-text {
+    color: rgb(255, 255, 255);
+    line-height: 120%;
+  }
+  .hero__block-btn {
+    max-width: 333px;
+    max-height: 72px;
+    width: 100%;
+    height: 100vh;
+    border-radius: 10px;
+    background: rgb(237, 231, 223);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+  }
+  .hero__block-btn:hover {
+    background-color: rgb(224, 218, 209);
+  }
+}
+
+// Open Menu Manager
+.hero__manager {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.open__manager {
+  display: block; //по умлочанию
+  background-color: inherit;
+  border: none;
+}
+.open__manager-close {
+  // при клики на кнопку
+  display: none;
+}
+.open__manager-list-close {
+  // по умолчанию
+  display: none;
+}
+.close__btn {
+  background-color: inherit;
+  border: none;
+  padding: 0;
+}
+.open__manager-list {
+  // когда кликнули на  .open__manager-close  открываем список
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  @include responsive-property("gap", 5, 15, 1);
+  margin: 0;
+  li {
+    display: inline-block; /* Отображаем элементы списка в строку */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero__block {
+    padding-top: 238px;
+    overflow: visible;
+  }
+  .hero__block-content {
+    display: flex;
+    justify-content: center;
+    .hero__title {
+      text-wrap: nowrap;
+    }
+  }
+  .hero__manager {
+    max-height: 70px;
+    height: 100vh;
+    overflow: visible;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(0px, 35px);
+    .open__manager {
+      padding: 0;
+    }
+  }
+  .open__manager-list {
+  }
+}
