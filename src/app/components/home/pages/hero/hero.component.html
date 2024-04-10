@@ -1,0 +1,47 @@
+<section class="hero">
+  <div class="hero__container">
+    <div class="hero__block">
+      <img src="assets/imgs/hero/hero.png" alt="" class="hero__fone" />
+      <div class="hero__block-content">
+        <h1 class="hero__title">
+          Київ: уроки <br />
+          вокалу онлайн
+        </h1>
+        <div class="hero__block-info">
+          <p class="hero__block-text">
+            Вивчайте вокал онлайн з комфортом:<br />
+            навчайтеся вдома у вашому темпі
+          </p>
+          <button class="hero__block-btn">Записатись</button>
+        </div>
+      </div>
+      <div class="hero__manager">
+        <button
+          [ngClass]="{ 'open__manager-close': isTrue }"
+          class="open__manager"
+          (click)="openManager()"
+        >
+          <img src="assets/imgs/hero/manager.svg" alt="" />
+        </button>
+        <ul
+          [ngClass]="{ 'open__manager-list': isTrue }"
+          class="open__manager-list-close"
+        >
+          <button (click)="openManager()" class="close__btn">
+            <img src="assets/imgs/hero/close.svg" alt="" />
+          </button>
+          <li>
+            <a [routerLink]=""
+              ><img src="assets/imgs/hero/phone.svg" alt=""
+            /></a>
+          </li>
+          <li>
+            <a [routerLink]=""
+              ><img src="assets/imgs/hero/post.svg" alt=""
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
